@@ -9,9 +9,9 @@ public class Computer
     private String hardDiskCapacity;
     private String weight; //TODO is this even needed?
     private String assetTag;
-    private Date purchaseDate;
+    private String purchaseDate;
 
-    public Computer(String manufacturer, String processor, int ramCapacity, String hardDiskCapacity, String weight, String assetTag, Date purchaseDate)
+    public Computer(String manufacturer, String processor, int ramCapacity, String hardDiskCapacity, String weight, String assetTag, String purchaseDate)
     {
         this.manufacturer = manufacturer;
         this.processor = processor;
@@ -52,7 +52,7 @@ public class Computer
         return assetTag;
     }
 
-    public Date getPurchaseDate()
+    public String getPurchaseDate()
     {
         return purchaseDate;
     }

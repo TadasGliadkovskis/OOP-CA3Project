@@ -10,6 +10,14 @@ public class StudentDB implements IDBMethods
         students = new ArrayList<>();
     }
 
+    protected void loadStudentsFromFile()
+    {
+        
+    }
+
+
+
+
     @Override
     public void addData()
     {
