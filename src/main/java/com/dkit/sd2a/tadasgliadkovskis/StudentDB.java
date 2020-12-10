@@ -3,13 +3,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentDB implements IDBMethods
+public class StudentDB
 {
-    ArrayList<Student> students;
+    private ArrayList<Student> students;
     final static String FILE_NAME = "students.txt";
-    static int dataIndexCounter = 0;
-    final int STUDENT_WITH_NO_COMPUTERS_ON_LOAN = 4;
-    final int STUDENT_WITH_COMPUTERS_ON_LOAN = 5;
+    private static int dataIndexCounter = 0;
 
     public StudentDB()
     {
@@ -21,10 +19,13 @@ public class StudentDB implements IDBMethods
         try (Scanner studentsFile = new Scanner(new BufferedReader(new FileReader(FILE_NAME))))
         {
             String input;
+            int STUDENT_WITH_NO_COMPUTERS_ON_LOAN = 4;
+            int STUDENT_WITH_COMPUTERS_ON_LOAN = 5;
             while (studentsFile.hasNextLine())
             {
                 input = studentsFile.nextLine();
                 String[] data = input.split(",");
+
                 if (data.length == STUDENT_WITH_NO_COMPUTERS_ON_LOAN)
                 {
                     studentWithNoComputer(data);
@@ -94,26 +95,27 @@ public class StudentDB implements IDBMethods
                 + ", " + student.getTelephone() + ", " + student.getComputersOnLoan();
     }
 
-    @Override
-    public void addData()
+    public void addStudent()
     {
 
     }
 
-    @Override
-    public void editData()
+    public void updateStudent()
     {
 
     }
 
-    @Override
-    public void deleteData()
+    public void deleteStudent()
     {
 
     }
 
-    @Override
-    public void readData()
+    public void printAllStudents()
+    {
+
+    }
+
+    public void printSelectedStudent()
     {
 
     }

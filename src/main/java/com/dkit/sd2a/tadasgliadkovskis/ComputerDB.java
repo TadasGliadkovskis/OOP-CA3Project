@@ -3,11 +3,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ComputerDB implements IDBMethods
+public class ComputerDB
 {
-    ArrayList<Computer> computers;
-    final static String FILE_NAME = "computers.txt";
-    static int dataIndexCounter = 0;
+    private ArrayList<Computer> computers;
+    private final static String FILE_NAME = "computers.txt";
+    private static int dataIndexCounter = 0;
 
     public ComputerDB()
     {
@@ -131,31 +131,26 @@ public class ComputerDB implements IDBMethods
         return computer.getClass().getSimpleName() + ", " + computer.toString();
     }
 
-    @Override
     public void addData()
     {
 
     }
 
-    @Override
     public void editData()
     {
 
     }
 
-    @Override
     public void deleteData()
     {
 
     }
 
-    @Override
     public void readData()
     {
 
     }
 
-    @Override
     public String toString()
     {
         return "ComputerDB{" +
