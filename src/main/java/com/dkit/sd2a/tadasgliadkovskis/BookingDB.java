@@ -3,9 +3,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BookingDB implements IDBMethods
+public class BookingDB
 {
-    ArrayList<Booking> bookings;
+    private ArrayList<Booking> bookings;
     final static String FILE_NAME = "bookings.txt";
     static int dataIndexCounter = 0;
 
@@ -76,36 +76,40 @@ public class BookingDB implements IDBMethods
                 booking.getComputerType() + ", " + booking.getComputerAssetTag() + ", " + booking.getStudentID();
     }
 
-    @Override
-    public void addData()
+
+    public void addBooking(StudentDB students, ComputerDB computers)
     {
 
     }
 
-    @Override
-    public void editData()
+
+    public void editBooking(StudentDB students, ComputerDB computers)
     {
 
     }
 
-    @Override
-    public void deleteData()
+
+    public void deleteBooking(StudentDB students, ComputerDB computers)
     {
 
     }
 
-    @Override
-    public void readData()
+    public void printAllBookings()
     {
         for (Booking booking : bookings)
         {
             System.out.println("\nBooking ID: " + booking.getBookingID());
             System.out.println("Day Borrowed: " + booking.getDayBorrowed());
             System.out.println(
-                    "Return Date: " + booking.getReturnDate()); //Todo should this be an if statment to not print if empty?
+                    "Return Date: " + booking.getReturnDate()); //Todo should this be an if statment to not print if empty
             System.out.println("Computer on Loan: " + booking.getComputerType());
             System.out.println("Computer Asset Tag: " + booking.getComputerAssetTag());
             System.out.println("Student ID: " + booking.getStudentID());
         }
+    }
+
+    public void findBooking()
+    {
+
     }
 }
