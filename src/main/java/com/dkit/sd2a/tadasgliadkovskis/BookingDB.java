@@ -7,6 +7,7 @@ public class BookingDB implements IDBMethods
 {
     ArrayList<Booking> bookings;
     final static String FILE_NAME = "bookings.txt";
+    //TODO implement a static counter to use for the data[x] number?
 
     public BookingDB()
     {
@@ -50,15 +51,21 @@ public class BookingDB implements IDBMethods
 
     public void saveBookingsToFile()
     {
-        try (BufferedWriter bookingsFile = new BufferedWriter(new FileWriter(FILE_NAME)))
+        if (!bookings.isEmpty())
         {
-            for (Booking booking : bookings)
+            try (BufferedWriter bookingsFile = new BufferedWriter(new FileWriter(FILE_NAME)))
             {
-                bookingsFile.write(getInfoAsString(booking) + "\n");
+                for (Booking booking : bookings)
+                {
+                    bookingsFile.write(getInfoAsString(booking) + "\n");
+                }
+            } catch (IOException ioe)
+            {
+                ioe.printStackTrace();
             }
-        } catch (IOException ioe)
+        } else
         {
-            ioe.printStackTrace();
+            System.out.println(Colours.RED + "There is no data to be saved for computers " + Colours.RESET);
         }
     }
 
@@ -94,7 +101,7 @@ public class BookingDB implements IDBMethods
             System.out.println("\nBooking ID: " + booking.getBookingID());
             System.out.println("Day Borrowed: " + booking.getDayBorrowed());
             System.out.println(
-                    "Return Date: " + booking.getReturnDate()); //Todo should this be an if statment to not print if empty
+                    "Return Date: " + booking.getReturnDate()); //Todo should this be an if statment to not print if empty?
             System.out.println("Computer on Loan: " + booking.getComputerType());
             System.out.println("Computer Asset Tag: " + booking.getComputerAssetTag());
             System.out.println("Student ID: " + booking.getStudentID());

@@ -1,4 +1,5 @@
 package com.dkit.sd2a.tadasgliadkovskis;
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Laptop extends Computer
@@ -16,7 +17,7 @@ public class Laptop extends Computer
 
     public double getScreenSize()
     {
-        return screenSize;
+        return screenSize; // TODO how to return without trailing zero for file saving
     }
 
     public double getBatteryLifeHours()
