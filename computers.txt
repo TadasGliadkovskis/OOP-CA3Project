@@ -1,0 +1,60 @@
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55100, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55101, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55102, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55103, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55104, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55105, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55106, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55107, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55108, 18-11-20, Dell, 24, 1920,1080
+Desktop, Dell, Intel Core i5 9th Gen, 8, 1TB, 3.5kg, DKIT-55109, 18-11-20, Dell, 24, 1920,1080
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20370, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20371, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20372, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20373, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20374, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20375, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20376, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20377, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20378, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20379, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20380, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20381, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20382, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20383, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20384, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20385, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20386, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20387, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20388, 18-11-20, 13, 8
+Laptop, HP, Intel Core i5 9th Gen, 8, 1TB,  2.5kg, DKIT-20389, 18-11-20, 13, 8
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40001, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40002, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40003, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40004, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40005, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40006, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40007, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40008, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40009, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40010, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40011, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40012, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40013, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40014, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40015, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40016, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40017, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40018, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40019, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40020, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40021, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40022, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40023, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40024, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40025, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40026, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40027, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40028, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40029, 18-11-20, 32, 16GB
+RaspberryPi, Raspberry, ARM Cortex-A72, 4, 42g, DKIT-40030, 18-11-20, 32, 16GB

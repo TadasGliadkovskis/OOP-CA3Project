@@ -7,7 +7,7 @@ public class RaspberryPi extends Computer
     private String sdCardCapacity;
 
     public RaspberryPi(String manufacturer, String processor, int ramCapacity,
-                       String weight, String assetTag, Date purchaseDate, int noOfGPIOPins, String sdCardCapacity)
+                       String weight, String assetTag, String purchaseDate, int noOfGPIOPins, String sdCardCapacity)
     {
         super(manufacturer, processor, ramCapacity, sdCardCapacity, weight, assetTag, purchaseDate);
         this.noOfGPIOPins = noOfGPIOPins;
@@ -22,5 +22,13 @@ public class RaspberryPi extends Computer
     public String getSdCardCapacity()
     {
         return sdCardCapacity;
+    }
+
+    @Override
+    public String toString()
+    {
+        return getManufacturer() + ", " + getProcessor() + ", " + getRamCapacity() + ", "
+                + getWeight() + ", " + getAssetTag() + ", "
+                + getPurchaseDate() + ", " + getNoOfGPIOPins() + ", " + getSdCardCapacity();
     }
 }
