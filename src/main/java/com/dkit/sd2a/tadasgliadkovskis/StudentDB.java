@@ -8,6 +8,8 @@ public class StudentDB implements IDBMethods
     ArrayList<Student> students;
     final static String FILE_NAME = "students.txt";
     static int dataIndexCounter = 0;
+    final int STUDENT_WITH_NO_COMPUTERS_ON_LOAN = 4;
+    final int STUDENT_WITH_COMPUTERS_ON_LOAN = 5;
 
     public StudentDB()
     {
@@ -23,10 +25,10 @@ public class StudentDB implements IDBMethods
             {
                 input = studentsFile.nextLine();
                 String[] data = input.split(",");
-                if (data.length == 4)
+                if (data.length == STUDENT_WITH_NO_COMPUTERS_ON_LOAN)
                 {
                     studentWithNoComputer(data);
-                } else if (data.length == 5)
+                } else if (data.length == STUDENT_WITH_COMPUTERS_ON_LOAN)
                 {
                     studentWithComputer(data);
                 } else

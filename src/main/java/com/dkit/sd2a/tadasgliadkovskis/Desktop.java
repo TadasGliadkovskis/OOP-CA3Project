@@ -18,5 +18,12 @@ public class Desktop extends Computer
         return monitor;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return getManufacturer() + ", " + getProcessor() + ", " + getRamCapacity() + ", "
+                + getHardDiskCapacity() + ", " + getWeight() + ", " + getAssetTag() + ", "
+                + getPurchaseDate() + ", " + monitor.getManufacturer() + ", " + monitor.getScreenSize() + ", "
+                + getMonitor().getResolution().getWidth() + ", " + monitor.getResolution().getHeight();
+    }
 }

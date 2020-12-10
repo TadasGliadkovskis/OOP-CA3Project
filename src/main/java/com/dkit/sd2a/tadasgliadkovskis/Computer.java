@@ -57,4 +57,17 @@ public class Computer
         return purchaseDate;
     }
 
+    @Override
+    public String toString()
+    {
+        return "Computer{" +
+                "manufacturer='" + manufacturer + '\'' +
+                ", processor='" + processor + '\'' +
+                ", ramCapacity=" + ramCapacity +
+                ", hardDiskCapacity='" + hardDiskCapacity + '\'' +
+                ", weight='" + weight + '\'' +
+                ", assetTag='" + assetTag + '\'' +
+                ", purchaseDate='" + purchaseDate + '\'' +
+                '}';
+    }
 }

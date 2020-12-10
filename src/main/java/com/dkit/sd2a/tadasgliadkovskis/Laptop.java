@@ -24,4 +24,12 @@ public class Laptop extends Computer
     {
         return batteryLifeHours;
     }
+
+    @Override
+    public String toString()
+    {
+        return getManufacturer() + ", " + getProcessor() + ", " + getRamCapacity() + ", "
+                + getHardDiskCapacity() + ", " + getWeight() + ", " + getAssetTag() + ", "
+                + getPurchaseDate() + ", " + getScreenSize() + ", " + getBatteryLifeHours();
+    }
 }

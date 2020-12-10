@@ -15,7 +15,7 @@ public class Booking
         this.bookingID = bookingID;
         this.dayBorrowed = dayBorrowed;
         this.computerType = computerType;
-        this.returnDate = null;
+        this.returnDate = "";
         this.computerAssetTag = computerAssetTag;
         this.studentID = studentID;
     }
@@ -42,6 +42,10 @@ public class Booking
 
     public String getReturnDate()
     {
+        if (returnDate.isEmpty())
+        {
+            return "";
+        }
         return returnDate;
     }
 

@@ -23,4 +23,12 @@ public class RaspberryPi extends Computer
     {
         return sdCardCapacity;
     }
+
+    @Override
+    public String toString()
+    {
+        return getManufacturer() + ", " + getProcessor() + ", " + getRamCapacity() + ", "
+                + getWeight() + ", " + getAssetTag() + ", "
+                + getPurchaseDate() + ", " + getNoOfGPIOPins() + ", " + getSdCardCapacity();
+    }
 }
