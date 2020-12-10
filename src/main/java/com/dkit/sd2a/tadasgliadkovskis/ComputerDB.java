@@ -23,7 +23,8 @@ public class ComputerDB implements IDBMethods
             {
                 input = computersFile.nextLine();
                 String[] data = input.split(",");
-                switch (data[dataIndexCounter++]) //the first element is the type of Computer
+                final String TYPE_OF_COMPUTER = data[dataIndexCounter++];
+                switch (TYPE_OF_COMPUTER) //the first element is the type of Computer
                 {
                 case ("Laptop"): //10
                     constructLaptop(data);

@@ -13,7 +13,16 @@ public class Student
         this.id = id;
         this.email = email;
         this.telephone = telephone;
-        this.computersOnLoan = "none";
+        this.computersOnLoan = "";
+    }
+
+    public Student(String name, String id, String email, String telephone, String computersOnLoan)
+    {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.telephone = telephone;
+        this.computersOnLoan = computersOnLoan;
     }
 
     public String getName()

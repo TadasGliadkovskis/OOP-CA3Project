@@ -7,14 +7,14 @@ public class BookingDB implements IDBMethods
 {
     ArrayList<Booking> bookings;
     final static String FILE_NAME = "bookings.txt";
-    //TODO implement a static counter to use for the data[x] number?
+    static int dataIndexCounter = 0;
 
     public BookingDB()
     {
         bookings = new ArrayList<>();
     }
 
-    protected void loadBookingsFromFile() //Todo reduce the middle part ? by seperating into two methods
+    protected void loadBookingsFromFile()
     {
         try (Scanner bookingsFile = new Scanner(new BufferedReader(new FileReader(FILE_NAME))))
         {
@@ -23,18 +23,19 @@ public class BookingDB implements IDBMethods
             {
                 input = bookingsFile.nextLine();
                 String[] data = input.split(",");
-                if (data.length > 5)
+                if (data.length > 5) //TODO separate this into another methood?
                 {
-                    int bookingID = Integer.parseInt(data[0]);
-                    String dayBorrowed = data[1].trim();
-                    String dayReturned = data[2].trim();
-                    String computerType = data[3].trim();
-                    String computerAssetTag = data[4].trim();
-                    String studentID = data[5].trim();
+                    int bookingID = Integer.parseInt(data[dataIndexCounter++]);
+                    String dayBorrowed = data[dataIndexCounter++].trim();
+                    String dayReturned = data[dataIndexCounter++].trim();
+                    String computerType = data[dataIndexCounter++].trim();
+                    String computerAssetTag = data[dataIndexCounter++].trim();
+                    String studentID = data[dataIndexCounter++].trim();
 
                     Booking readInBooking = new Booking(bookingID, dayBorrowed, dayReturned, computerType,
                             computerAssetTag, studentID);
                     bookings.add(readInBooking);
+                    dataIndexCounter = 0;
                 } else
                 {
                     throw new ArrayIndexOutOfBoundsException();
