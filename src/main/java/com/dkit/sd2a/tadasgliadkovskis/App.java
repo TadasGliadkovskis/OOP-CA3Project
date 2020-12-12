@@ -52,7 +52,7 @@ public class App
             }
         }
         System.out.println(Colours.PURPLE + "End of app");
-        //TODO save arrayList status here?
+        //TODO save arrayList status here? Yes
     }
 
     private void doStudentMainMenuLoop(StudentDB students)
@@ -108,7 +108,7 @@ public class App
                 case QUIT_BOOKING_MENU:
                     loop = false;
                     break;
-                case ADD_BOOKING:
+                case BOOK_A_DEVICE:
                     bookings.addBooking(students, computers);
                     break;
                 case UPDATE_BOOKING:
