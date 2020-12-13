@@ -112,7 +112,7 @@ public class App
                     bookings.addBooking(students, computers);
                     break;
                 case RETURN_COMPUTER:
-                    bookings.returnBookedComputer(students, computers);
+                    bookings.returnBookedComputer();
                     break;
                 case REMOVE_BOOKING:
                     bookings.deleteBooking(students, computers);

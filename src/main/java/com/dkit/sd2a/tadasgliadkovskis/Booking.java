@@ -64,6 +64,11 @@ public class Booking
         return studentID;
     }
 
+    public void setReturnDate(String returnDate)
+    {
+        this.returnDate = returnDate;
+    }
+
     @Override
     public String toString()
     {

@@ -265,9 +265,62 @@ public class BookingDB
         System.out.print("Enter the name of the device you would like to book -> ");
     }
 
-    public void returnBookedComputer(StudentDB students, ComputerDB computers)
+    public void returnBookedComputer()
     {
+        ArrayList<String> bookingIDs = getAllBookingIDs();
+        try
+        {
+            String BookingID = getBookingIDFromUser(bookingIDs);
+            String returnDate = createBookingDate();
+            setReturnDate(BookingID, returnDate);
+            System.out.println(bookings);
+        } catch (InputMismatchException ie)
+        {
+            System.out.println(Colours.PURPLE + "Process Canceled" + Colours.RESET);
+            System.out.println(bookings);
+        }
 
+    }
+
+    private void setReturnDate(String bookingID, String returnDate)
+    {
+        for (Booking booking : bookings)
+        {
+            if (booking.getBookingID().equals(bookingID) && booking.getReturnDate().isEmpty())
+            {
+                booking.setReturnDate(returnDate);
+            } else if (booking.getBookingID().equals(bookingID) && !booking.getReturnDate().isEmpty())
+            {
+                System.out.println(Colours.RED + "This booking has already been returned" + Colours.RESET);
+                throw new InputMismatchException();
+            }
+        }
+    }
+
+    private String getBookingIDFromUser(ArrayList<String> bookingIDs)
+    {
+        boolean validBookingIDGiven = false;
+        String bookingID = "";
+        while (!validBookingIDGiven)
+        {
+            System.out.println("\nTo cancel this process enter 0");
+            System.out.print("Please enter the booking ID for the return ->");
+            bookingID = userInput.nextLine();
+            validBookingIDGiven = bookingIDs.contains(bookingID);
+            if (bookingID.equals("0"))
+            {
+                throw new InputMismatchException();
+            }
+            if (bookingID.isEmpty())
+            {
+                System.out.println(Colours.RED + "Booking ID cant be empty" + Colours.RESET);
+            } else if (!validBookingIDGiven)
+            {
+                System.out.println(
+                        Colours.RED + "This booking ID does not exist. please try again" + Colours.RESET);
+            }
+        }
+        return bookingID;
     }
 
     public void deleteBooking(StudentDB students, ComputerDB computers)
