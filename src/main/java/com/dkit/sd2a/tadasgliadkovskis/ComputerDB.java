@@ -6,12 +6,14 @@ import java.util.Scanner;
 public class ComputerDB
 {
     private ArrayList<Computer> computers;
-    private final static String FILE_NAME = "computers.txt";
-    private static int dataIndexCounter = 0;
+    private final String FILE_NAME = "computers.txt";
+    private int dataIndexCounter = 0;
+    private int[] totalDevicesCount;
 
     public ComputerDB()
     {
         computers = new ArrayList<>();
+        totalDevicesCount = new int[3];
     }
 
     protected void loadComputersFromFile()
@@ -26,13 +28,13 @@ public class ComputerDB
                 final String TYPE_OF_COMPUTER = data[dataIndexCounter++];
                 switch (TYPE_OF_COMPUTER) //the first element is the type of Computer
                 {
-                case ("Laptop"): //10
-                    constructLaptop(data);
-                    break;
-                case ("Desktop"): //11
+                case ("Desktop"):
                     constructDesktop(data);
                     break;
-                case ("RaspberryPi"): //9
+                case ("Laptop"):
+                    constructLaptop(data);
+                    break;
+                case ("RaspberryPi"):
                     constructRaspberryPi(data);
                     break;
                 default:
@@ -43,24 +45,6 @@ public class ComputerDB
         {
             System.out.println(Colours.RED + "File " + FILE_NAME + " not found" + Colours.RESET);
         }
-    }
-
-    private void constructRaspberryPi(String[] data)
-    {
-        int counter = 1;
-        String manufacturer = data[dataIndexCounter++].trim();
-        String processor = data[dataIndexCounter++].trim();
-        int ramCapacity = Integer.parseInt(data[dataIndexCounter++].trim());
-        String weight = data[dataIndexCounter++].trim();
-        String assetTag = data[dataIndexCounter++].trim();
-        String purchaseDate = data[dataIndexCounter++].trim();
-        int noOfGPIOPins = Integer.parseInt(data[dataIndexCounter++].trim());
-        String sdCardCapacity = data[dataIndexCounter++].trim();
-
-        Computer readInRaspberryPi = new RaspberryPi
-                (manufacturer, processor, ramCapacity, weight, assetTag, purchaseDate, noOfGPIOPins, sdCardCapacity);
-        computers.add(readInRaspberryPi);
-        dataIndexCounter = 0;
     }
 
     private void constructDesktop(String[] data)
@@ -78,6 +62,7 @@ public class ComputerDB
                 (manufacturer, processor, ramCapacity, hardDiskCapacity, weight, assetTag, purchaseDate, monitor);
         computers.add(readInDesktop);
         dataIndexCounter = 0;
+        totalDevicesCount[0]++;
     }
 
     private Monitor createMonitor(String[] data)
@@ -107,6 +92,26 @@ public class ComputerDB
                         hardDiskSize, weight, assetTag, purchaseDate, screenSize, batteryLife);
         computers.add(readInLaptop);
         dataIndexCounter = 0;
+        totalDevicesCount[1]++;
+    }
+
+    private void constructRaspberryPi(String[] data)
+    {
+        int counter = 1;
+        String manufacturer = data[dataIndexCounter++].trim();
+        String processor = data[dataIndexCounter++].trim();
+        int ramCapacity = Integer.parseInt(data[dataIndexCounter++].trim());
+        String weight = data[dataIndexCounter++].trim();
+        String assetTag = data[dataIndexCounter++].trim();
+        String purchaseDate = data[dataIndexCounter++].trim();
+        int noOfGPIOPins = Integer.parseInt(data[dataIndexCounter++].trim());
+        String sdCardCapacity = data[dataIndexCounter++].trim();
+
+        Computer readInRaspberryPi = new RaspberryPi
+                (manufacturer, processor, ramCapacity, weight, assetTag, purchaseDate, noOfGPIOPins, sdCardCapacity);
+        computers.add(readInRaspberryPi);
+        dataIndexCounter = 0;
+        totalDevicesCount[2]++;
     }
 
     public void saveComputersToFile()
@@ -129,6 +134,36 @@ public class ComputerDB
     private String getInfoAsString(Computer computer)
     {
         return computer.getClass().getSimpleName() + ", " + computer.toString();
+    }
+
+    public int[] getTotalDevicesCount()
+    {
+        return totalDevicesCount;
+    }
+
+    public ArrayList<ArrayList<String>> getAllAssetTags()
+    {
+        ArrayList<ArrayList<String>> computerAssetTags = new ArrayList<>();
+        ArrayList<String> desktopAssetTags = new ArrayList<>();
+        ArrayList<String> laptopAssetTags = new ArrayList<>();
+        ArrayList<String> raspBerryPiAssetTags = new ArrayList<>();
+        for (Computer computer : computers)
+        {
+            if (computer.getClass().getSimpleName().equals("Desktop"))
+            {
+                desktopAssetTags.add(computer.getAssetTag());
+            } else if (computer.getClass().getSimpleName().equals("Laptop"))
+            {
+                laptopAssetTags.add(computer.getAssetTag());
+            } else
+            {
+                raspBerryPiAssetTags.add(computer.getAssetTag());
+            }
+        }
+        computerAssetTags.add(desktopAssetTags);
+        computerAssetTags.add(laptopAssetTags);
+        computerAssetTags.add(raspBerryPiAssetTags);
+        return computerAssetTags;
     }
 
     public void addData()

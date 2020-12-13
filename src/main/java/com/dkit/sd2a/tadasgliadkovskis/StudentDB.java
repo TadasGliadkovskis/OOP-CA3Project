@@ -95,6 +95,16 @@ public class StudentDB
                 + ", " + student.getTelephone() + ", " + student.getComputersOnLoan();
     }
 
+    protected ArrayList<String> getAllStudentIDs()
+    {
+        ArrayList<String> studentIDs = new ArrayList<>();
+        for (Student student : students)
+        {
+            studentIDs.add(student.getId());
+        }
+        return studentIDs;
+    }
+
     public void addStudent()
     {
 
