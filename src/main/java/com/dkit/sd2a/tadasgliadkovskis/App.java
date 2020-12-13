@@ -73,12 +73,6 @@ public class App
                 case ADD_STUDENT:
                     students.addStudent();
                     break;
-                case UPDATE_STUDENT:
-                    students.updateStudent();
-                    break;
-                case REMOVE_STUDENT:
-                    students.deleteStudent();
-                    break;
                 case PRINT_ALL_STUDENTS:
                     students.printAllStudents();
                     break;
@@ -113,9 +107,6 @@ public class App
                     break;
                 case RETURN_COMPUTER:
                     bookings.returnBookedComputer();
-                    break;
-                case REMOVE_BOOKING:
-                    bookings.deleteBooking(students, computers);
                     break;
                 case PRINT_ALL_BOOKINGS:
                     bookings.printAllBookings();
