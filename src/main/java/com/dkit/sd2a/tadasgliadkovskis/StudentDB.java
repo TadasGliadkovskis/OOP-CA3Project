@@ -211,11 +211,51 @@ public class StudentDB
 
     public void printAllStudents()
     {
-
+        for (Student student : students)
+        {
+            System.out.println("\nID: " + student.getId());
+            System.out.println("Name: " + student.getName());
+            System.out.println("Email: " + student.getEmail());
+            System.out.println("telephone: " + student.getTelephone());
+            System.out.println("Computers On loan: " + student.getComputersOnLoan());
+        }
     }
 
     public void printSelectedStudent()
     {
+        ArrayList<String> studentIDs = getAllStudentIDs();
+        boolean studentIDExists = false;
+        String studentIDToLookFor = "";
+        while (!studentIDExists)
+        {
+            System.out.println("\nTo cancel this process enter 0");
+            System.out.print("Please enter the student ID that you would like to see ->");
+            studentIDToLookFor = userInput.nextLine().toUpperCase().trim();
+            studentIDExists = studentIDs.contains(studentIDToLookFor);
+            if (studentIDToLookFor.equals("0"))
+            {
+                throw new InputMismatchException();
+            }
+            if (studentIDToLookFor.isEmpty())
+            {
+                System.out.println(Colours.RED + "student ID cant be empty" + Colours.RESET);
+            } else if (!studentIDExists)
+            {
+                System.out.println(
+                        Colours.RED + "This student ID does not exist. please try again" + Colours.RESET);
+            }
+        }
 
+        for (Student student : students)
+        {
+            if (student.getId().equals(studentIDToLookFor))
+            {
+                System.out.println("\nID: " + student.getId());
+                System.out.println("Name: " + student.getName());
+                System.out.println("Email: " + student.getEmail());
+                System.out.println("telephone: " + student.getTelephone());
+                System.out.println("Computers On loan: " + student.getComputersOnLoan());
+            }
+        }
     }
 }
