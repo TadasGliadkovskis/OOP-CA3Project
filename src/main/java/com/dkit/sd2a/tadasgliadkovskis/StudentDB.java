@@ -1,13 +1,18 @@
 package com.dkit.sd2a.tadasgliadkovskis;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StudentDB
 {
     private ArrayList<Student> students;
     final static String FILE_NAME = "students.txt";
     private static int dataIndexCounter = 0;
+    private final static Scanner userInput = new Scanner(System.in);
 
     public StudentDB()
     {
@@ -28,10 +33,10 @@ public class StudentDB
 
                 if (data.length == STUDENT_WITH_NO_COMPUTERS_ON_LOAN)
                 {
-                    studentWithNoComputer(data);
+                    studentWithNoComputerBooked(data);
                 } else if (data.length == STUDENT_WITH_COMPUTERS_ON_LOAN)
                 {
-                    studentWithComputer(data);
+                    studentWithComputerBooked(data);
                 } else
                 {
                     throw new ArrayIndexOutOfBoundsException();
@@ -46,7 +51,7 @@ public class StudentDB
         }
     }
 
-    private void studentWithNoComputer(String[] data)
+    private void studentWithNoComputerBooked(String[] data)
     {
         String name = data[dataIndexCounter++].trim();
         String id = data[dataIndexCounter++].trim();
@@ -57,7 +62,7 @@ public class StudentDB
         dataIndexCounter = 0;
     }
 
-    private void studentWithComputer(String[] data)
+    private void studentWithComputerBooked(String[] data)
     {
         String name = data[dataIndexCounter++].trim();
         String id = data[dataIndexCounter++].trim();
@@ -107,7 +112,94 @@ public class StudentDB
 
     public void addStudent()
     {
+        ArrayList<String> studentIDs = getAllStudentIDs();
+        try
+        {
+            String studentName = getStudentNameFromUser();
+            String studentTelephoneContact = getStudentTelephoneFromUser();
+            String studentID = createStudentID(studentIDs);
+            String studentEmail = studentName.split(" ")[0] + "." + studentName.split(" ")[1] + "@dkit.ie";
 
+
+            Student newStudent = new Student(studentName, studentID, studentEmail, studentTelephoneContact);
+            students.add(newStudent);
+            System.out.println(studentID);
+        } catch (InputMismatchException ie)
+        {
+            System.out.println(Colours.PURPLE + "Process Canceled" + Colours.RESET);
+        }
+    }
+
+    private String createStudentID(ArrayList<String> studentIDs)
+    {
+        String IDStart = "D00";
+        String studentID = "";
+        boolean loop = true;
+        Random rand = new Random();
+        while (loop)
+        {
+            studentID = IDStart + (rand.nextInt(899999) + 100000);
+            loop = studentIDs.contains(studentID);
+        }
+        return studentID;
+    }
+
+    private String getStudentTelephoneFromUser()
+    {
+        String patterns
+                = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";
+        Pattern pattern = Pattern.compile(patterns);
+        String telephone = "";
+        boolean validPhone = false;
+        while (!validPhone)
+        {
+            System.out.println("\nTo exit this process press 0");
+            System.out.print("Please enter in students telephoneNumber ->");
+            telephone = userInput.nextLine();
+            Matcher matcher = pattern.matcher(telephone);
+            validPhone = matcher.matches();
+            if (telephone.equals("0"))
+            {
+                throw new InputMismatchException();
+            }
+            if (telephone.isEmpty())
+            {
+                System.out.println(Colours.RED + "Telephone can't be empty" + Colours.RESET);
+            } else if (!validPhone)
+            {
+                System.out.println(Colours.RED + "Invalid telephone format" + Colours.RESET);
+            }
+        }
+        return telephone;
+    }
+
+    private String getStudentNameFromUser()
+    {
+        String firstName = "";
+        String secondName = "";
+        boolean loop = true;
+        while (loop)
+        {
+            System.out.println("\nTo exit this process press 0");
+            System.out.print("Please enter in students first name ->");
+            firstName = userInput.nextLine();
+            System.out.print("Please enter in students second name ->");
+            secondName = userInput.nextLine();
+            if (firstName.equals("0") || secondName.equals("0"))
+            {
+                throw new InputMismatchException();
+            }
+            if (firstName.isEmpty() || secondName.isEmpty())
+            {
+                System.out.println(Colours.RED + "Name can't be empty" + Colours.RESET);
+            } else
+            {
+                loop = false;
+            }
+        }
+        return firstName.trim().concat(" " + secondName.trim());
     }
 
     public void updateStudent()

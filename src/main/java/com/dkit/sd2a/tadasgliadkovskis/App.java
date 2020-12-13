@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App
 {
-    private static Scanner keyboard = new Scanner(System.in);
+    final private static Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args)
     {
@@ -111,8 +111,8 @@ public class App
                 case BOOK_A_DEVICE:
                     bookings.addBooking(students, computers);
                     break;
-                case UPDATE_BOOKING:
-                    bookings.editBooking(students, computers);
+                case RETURN_COMPUTER:
+                    bookings.returnBookedComputer(students, computers);
                     break;
                 case REMOVE_BOOKING:
                     bookings.deleteBooking(students, computers);
