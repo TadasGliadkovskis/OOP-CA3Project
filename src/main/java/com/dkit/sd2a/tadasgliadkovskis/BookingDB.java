@@ -179,7 +179,7 @@ public class BookingDB
 
     private String createRandomBookingID(ArrayList<String> bookingIDs)
     {
-        String bookingIDStart = "1000";
+        String bookingIDStart = "10";
         String bookingID = "";
         boolean loop = true;
         Random rand = new Random();
@@ -273,11 +273,9 @@ public class BookingDB
             String BookingID = getBookingIDFromUser(bookingIDs);
             String returnDate = createBookingDate();
             setReturnDate(BookingID, returnDate);
-            System.out.println(bookings);
         } catch (InputMismatchException ie)
         {
             System.out.println(Colours.PURPLE + "Process Canceled" + Colours.RESET);
-            System.out.println(bookings);
         }
 
     }
@@ -344,7 +342,41 @@ public class BookingDB
 
     public void findBooking()
     {
-
+        ArrayList<String> bookingIDs = getAllBookingIDs();
+        boolean bookingIDExists = false;
+        String bookingIDToLookFor = "";
+        while (!bookingIDExists)
+        {
+            System.out.println("\nTo cancel this process enter 0");
+            System.out.print("Please enter the booking ID that you would like to see ->");
+            bookingIDToLookFor = userInput.nextLine();
+            bookingIDExists = bookingIDs.contains(bookingIDToLookFor);
+            if (bookingIDToLookFor.equals("0"))
+            {
+                throw new InputMismatchException();
+            }
+            if (bookingIDToLookFor.isEmpty())
+            {
+                System.out.println(Colours.RED + "Booking ID cant be empty" + Colours.RESET);
+            } else if (!bookingIDExists)
+            {
+                System.out.println(
+                        Colours.RED + "This booking ID does not exist. please try again" + Colours.RESET);
+            }
+        }
+        for (Booking booking : bookings)
+        {
+            if (booking.getBookingID().equals(bookingIDToLookFor))
+            {
+                System.out.println("\nBooking ID: " + booking.getBookingID());
+                System.out.println("Day Borrowed: " + booking.getDayBorrowed());
+                System.out.println(
+                        "Return Date: " + booking.getReturnDate());
+                System.out.println("Computer on Loan: " + booking.getComputerType());
+                System.out.println("Computer Asset Tag: " + booking.getComputerAssetTag());
+                System.out.println("Student ID: " + booking.getStudentID());
+            }
+        }
     }
 
     public ArrayList<String> getAllBookingIDs()
