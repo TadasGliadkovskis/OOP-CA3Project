@@ -265,7 +265,7 @@ public class BookingDB
         System.out.print("Enter the name of the device you would like to book -> ");
     }
 
-    public void editBooking(StudentDB students, ComputerDB computers)
+    public void returnBookedComputer(StudentDB students, ComputerDB computers)
     {
 
     }
