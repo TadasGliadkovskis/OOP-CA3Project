@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StudentDB
 {
@@ -144,23 +146,30 @@ public class StudentDB
 
     private String getStudentTelephoneFromUser()
     {
+        String patterns
+                = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";
+        Pattern pattern = Pattern.compile(patterns);
         String telephone = "";
-        boolean loop = true;
-        while (loop)
+        boolean validPhone = false;
+        while (!validPhone)
         {
             System.out.println("\nTo exit this process press 0");
             System.out.print("Please enter in students telephoneNumber ->");
             telephone = userInput.nextLine();
+            Matcher matcher = pattern.matcher(telephone);
+            validPhone = matcher.matches();
             if (telephone.equals("0"))
             {
                 throw new InputMismatchException();
             }
             if (telephone.isEmpty())
             {
-                System.out.println(Colours.RED + "Name can't be empty" + Colours.RESET);
-            } else
+                System.out.println(Colours.RED + "Telephone can't be empty" + Colours.RESET);
+            } else if (!validPhone)
             {
-                loop = false;
+                System.out.println(Colours.RED + "Invalid telephone format" + Colours.RESET);
             }
         }
         return telephone;
