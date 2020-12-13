@@ -119,11 +119,8 @@ public class StudentDB
             String studentTelephoneContact = getStudentTelephoneFromUser();
             String studentID = createStudentID(studentIDs);
             String studentEmail = studentName.split(" ")[0] + "." + studentName.split(" ")[1] + "@dkit.ie";
-
-
             Student newStudent = new Student(studentName, studentID, studentEmail, studentTelephoneContact);
             students.add(newStudent);
-            System.out.println(studentID);
         } catch (InputMismatchException ie)
         {
             System.out.println(Colours.PURPLE + "Process Canceled" + Colours.RESET);
