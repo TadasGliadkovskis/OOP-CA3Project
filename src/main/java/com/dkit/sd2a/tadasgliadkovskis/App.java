@@ -22,6 +22,9 @@ public class App
         computers.loadComputersFromFile();
 
         doMainMenuLoop(students, bookings, computers);
+        students.saveStudentsToFile();
+        bookings.saveBookingsToFile();
+        computers.saveComputersToFile();
     }
 
     private void doMainMenuLoop(StudentDB students, BookingDB bookings, ComputerDB computers)
